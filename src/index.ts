@@ -1,4 +1,3 @@
-// get path from call params
 import fs from "fs";
 import path from "path";
 
@@ -34,26 +33,35 @@ interface FileScan {
 }
 
 const scanCSSFiles = (files: string[]) => {
-  const output = files.reduce((acc: FileScan[], file) => {
-    const content = fs.readFileSync(file, "utf-8");
-    const fileScanResult: FileScan = {
-      filePath: file,
-      foundLines: [],
-    };
+  const output = files
+    .filter((file) => file.endsWith("min.css"))
+    .reduce((acc: FileScan[], file) => {
+      const content = fs.readFileSync(file, "utf-8");
+      const fileScanResult: FileScan = {
+        filePath: file,
+        foundLines: [],
+      };
 
-    const lines = content.split("\n");
-    lines.forEach((line, index) => {
-      if (line.match(/#[0-9a-fA-F]{6}/g) || line.match(/#[0-9a-fA-F]{3}/g)) {
-        fileScanResult.foundLines.push({
-          lineNumber: index + 1,
-          lineContent: line,
-        });
-      }
-    });
+      const lines = content.split("\n");
+      if (lines.length >= 1) return acc;
 
-    return acc.concat(fileScanResult);
-  }, [] as FileScan[]);
+      lines.forEach((line, index) => {
+        if (line.match(/#[0-9a-fA-F]{6}/g) || line.match(/#[0-9a-fA-F]{3}/g)) {
+          fileScanResult.foundLines.push({
+            lineNumber: index + 1,
+            lineContent: line,
+          });
+        }
+      });
 
+      return acc.concat(fileScanResult);
+    }, [] as FileScan[]);
+
+  const csvOutput = output.flatMap((file) => file.foundLines.map((line) => `${file.filePath},${line.lineNumber},${line.lineContent}`));
+  csvOutput.unshift("File Path,Line Number,Line Content");
+
+
+  fs.writeFileSync(path.join(__dirname, "output.csv"), csvOutput.join("\n"));
   fs.writeFileSync(outputJson, JSON.stringify(output, null, 2));
 };
 
