@@ -34,7 +34,11 @@ interface FileScan {
 
 const scanCSSFiles = (files: string[]) => {
   const output = files
-    .filter((file) => file.endsWith("min.css"))
+    .filter((file) => !file.endsWith("min.css"))
+    .filter((file) => !file.includes("\\bin\\"))
+    .filter((file) => !file.includes("Test"))
+    .filter((file) => !file.includes("\\ckeditor"))
+    .filter((file) => !file.includes("\\jqueryui\\"))
     .reduce((acc: FileScan[], file) => {
       const content = fs.readFileSync(file, "utf-8");
       const fileScanResult: FileScan = {
@@ -43,7 +47,6 @@ const scanCSSFiles = (files: string[]) => {
       };
 
       const lines = content.split("\n");
-      if (lines.length >= 1) return acc;
 
       lines.forEach((line, index) => {
         if (line.match(/#[0-9a-fA-F]{6}/g) || line.match(/#[0-9a-fA-F]{3}/g)) {
@@ -54,11 +57,13 @@ const scanCSSFiles = (files: string[]) => {
         }
       });
 
+      if(fileScanResult.foundLines.length < 1) return acc;
+
       return acc.concat(fileScanResult);
     }, [] as FileScan[]);
 
-  const csvOutput = output.flatMap((file) => file.foundLines.map((line) => `${file.filePath},${line.lineNumber},${line.lineContent}`));
-  csvOutput.unshift("File Path,Line Number,Line Content");
+  const csvOutput = output.flatMap((file) => file.foundLines.map((line) => `${file.filePath}, ${line.lineNumber}, ${line.lineContent.trim()}`));
+  csvOutput.unshift("File Path, Line Number, Line Content");
 
 
   fs.writeFileSync(path.join(__dirname, "output.csv"), csvOutput.join("\n"));
