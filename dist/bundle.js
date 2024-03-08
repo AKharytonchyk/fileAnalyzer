@@ -1,0 +1,1 @@
+(()=>{"use strict";process.argv[2]})();
