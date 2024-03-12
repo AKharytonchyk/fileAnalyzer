@@ -29,7 +29,7 @@ export interface FileElement {
   src: string;
 }
 const cssVariables = Object.keys(currentColorVariables).join("|");
-const cssVariableRegex = new RegExp(`var\\((${cssVariables})`, "gi");
+const cssVariableRegex = new RegExp(`var\\((${cssVariables})\\)`, "gi");
 const regularColorsRegex =
   /:\s?(black|white|red|green|blue|yellow|orange|pink|purple|brown|gray|grey)/i;
 
@@ -117,21 +117,21 @@ const scanCSSFiles = (files: string[]) => {
       const lines = content.split("\n");
 
       lines.forEach((line, index) => {
-        const hrefMatches = line.match(/#[0-9a-fA-F]{3}[;,\s]/gi)?.slice(0) || [];
-        const rgbaMatches = line.match(/rgba?\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}/gi)?.slice(0) || [];
-        const hslaMatches = line.match(/hsla?\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}/gi)?.slice(0) || [];
-        const regularColorsMatches = line.match(regularColorsRegex)?.slice(0) || [];
+        const hrefMatches = line.match(/#[0-9a-fA-F]{3,6}[;,\s]/gi)?.map(el=> el.replace(/[;,\s]/, '')) || [];
+        const rgbMatches = line.match(/rgba?\(\s?[0-9]{1,3},\s?[0-9]{1,3},\s?[0-9]{1,3}\)/gi) || [];
+        const rgbaMatches = line.match(/rgba?\(\s?[0-9]{1,3},\s?[0-9]{1,3},\s?[0-9]{1,3},\s?[0-9,.]{1,9}\)/gi) || [];
+        const regularColorsMatches = line.match(regularColorsRegex)?.slice(1) || [];
         const variableMatches = line.match(cssVariableRegex)?.slice(0) || [];
 
         const matches = [
           ...hrefMatches,
+          ...rgbMatches,
           ...rgbaMatches,
-          ...hslaMatches,
           ...regularColorsMatches,
           ...variableMatches,
         ];
 
-        matches.map(match => match.toLowerCase()).forEach((match) => {
+        matches.map(match => match.toLowerCase().trim()).forEach((match) => {
           if(!variableRecord[match]) colorSet.add(match);
           fileScanResult.foundLines.push({
             lineNumber: index + 1,
@@ -157,11 +157,11 @@ const scanCSSFiles = (files: string[]) => {
             line.lineContent.toLowerCase().includes(value.toLowerCase())
           )
           .map(([key]) => key)
-          .join(",")}`
+          .join(",")} | ${line.color} | ${line.variable}`
     )
   );
   csvOutput.unshift(
-    "File Path| Bundle Name| Line Number| Line Content| CSS Variable Name"
+    "File Path| Bundle Name| Line Number| Line Content| CSS Variable Name| Color| Variable Name"
   );
   fs.writeFileSync(path.join(__dirname, "missingColorVars.txt"), JSON.stringify([...colorSet].join("\n"), null, 2));
   fs.writeFileSync(path.join(__dirname, "output.csv"), csvOutput.join("\n"));
