@@ -1,0 +1,562 @@
+#636466
+black
+#f5efe3
+#00a8e3
+#bee0ee
+#72c9e9
+#bfbfbf
+#e5e5e5
+rgba(0, 0, 0, 0.176)
+#ababab
+#ddd
+#f5f5f5
+#ccc
+#5b5b5b
+#4c4c4c
+#888
+#c9c9c9
+#2a2a2a
+#96c93c
+rgba(51,51,51,0.7)
+#8bbb39
+green
+#ff9c33
+#006699
+gray
+#999999
+#dddddd
+#d4d4d4
+#666666
+#eeeeee
+#555555
+#4d4d4f
+#9fa1a4
+#303030
+#a5cf48
+#616161
+#bbb
+#999
+#807979
+#d0d0d0
+rgb(63, 63, 63)
+#e8e8e8
+rgb(105, 129, 174)
+rgb(247, 164, 14)
+rgb(116, 113, 116)
+#9ac949
+#a0a0a0
+rgba(255, 255, 255, 0.5)
+rgb(77, 77, 77)
+#eee
+#666
+#333333
+#337ab7
+#2b6191
+#e4e4e4
+#ff0
+#c0c0c0
+rgba(0, 0, 0, 0)
+#23527c
+#777777
+#fcf8e3
+#286090
+#3c763d
+#2b542c
+#31708f
+#245269
+#8a6d3b
+#66512c
+#a94442
+#843534
+#dff0d8
+#c1e2b3
+#d9edf7
+#afd9ee
+#f7ecb5
+#f2dede
+#e4b9b9
+#c7254e
+#f9f2f4
+#333
+rgba(0, 0, 0, 0.25)
+#f9f9f9
+#d0e9c6
+#c4e3f3
+#faf2cc
+#ebcccc
+rgba(0, 0, 0, 0.075)
+#66afe9
+rgba(0, 0, 0, .075)
+rgba(102, 175, 233, 0.6)
+#67b168
+#c0a16b
+#ce8483
+#737373
+rgba(0, 0, 0, 0.125)
+#e6e6e6
+#8c8c8c
+#adadad
+#2e6da4
+#122b40
+#204d74
+#5cb85c
+#4cae4c
+#449d44
+#255625
+#398439
+#5bc0de
+#46b8da
+#31b0d5
+#1b6d85
+#269abc
+#f0ad4e
+#eea236
+#ec971f
+#985f0d
+#d58512
+#d9534f
+#d43f3a
+#c9302c
+#761c19
+#ac2925
+rgba(0, 0, 0, 0.15)
+rgba(0, 0, 0, 0.175)
+rgba(255, 255, 255, 0.1)
+#f8f8f8
+#e7e7e7
+#777
+#5e5e5e
+#555
+#222
+#080808
+#9d9d9d
+#444
+#101010
+#d5d5d5
+#d6e9c6
+#c9e2b3
+#bce8f1
+#a6e1ec
+#faebcc
+#f7e1b5
+#ebccd1
+#e4b9c0
+rgba(0, 0, 0, 0.1)
+rgba(255, 255, 255, 0.15)
+#c7ddef
+rgba(0, 0, 0, 0.05)
+#e3e3e3
+rgba(0, 0, 0, 0.2)
+rgba(0, 0, 0, 0.5)
+#ebebeb
+rgba(0, 0, 0, 0.6)
+rgba(0, 0, 0, 0.0001)
+rgba(240, 171, 0, 0.1)
+rgba(27, 145, 255, 0.1)
+rgba(155, 118, 255, 0.1)
+rgba(245, 139, 0, 0.1)
+rgba(92, 193, 34, 0.1)
+rgba(238, 57, 57, 0.1)
+rgba(4, 172, 167, 0.1)
+rgba(243, 29, 236, 0.1)
+rgba(131, 150, 168, 0.1)
+rgba(0, 0, 0, 0.07)
+rgba(0, 0, 0, 0.12)
+#f3f6f7
+var(--litmos-primary-color)
+#444790
+#d89900
+#d4403a
+#c5c5c5
+var(--litmos-accent-1-dark)
+rgba(115, 115, 115, 0.15)
+#949494
+rgba(148, 148, 148, 0.15)
+#4a90f2
+var(--litmos-accent-2-dark)
+#a691fe
+var(--litmos-accent-3-dark)
+#ec995b
+var(--litmos-accent-4-dark)
+#72be87
+var(--litmos-accent-5-dark)
+#f26161
+var(--litmos-accent-6-dark)
+#77c5cf
+var(--litmos-accent-7-dark)
+#d872ed
+var(--litmos-accent-9-dark)
+#a4b3c3
+var(--litmos-primary-color-foreground)
+#a9640a
+#d9800d
+#2274e2
+#eb0008
+#1b870d
+#22a711
+#707070
+#d7dbdd
+#9c9c9c
+#f1f1f1
+#f7f8f8
+#cccccc
+#fcbe49
+#41d239
+#952
+#f62
+#f84545
+#090909
+#0ccf6b
+#3e3c3c
+#f6f6f6
+#536878
+rgba(211, 211, 211, 0.5)
+#fa3e3e
+#4e4e4e
+#56a00e
+rgb(176, 176, 176)
+#fd2e06
+#3d3d3d
+var(--litmos-accent-1)
+var(--litmos-accent-2)
+var(--litmos-accent-3)
+var(--litmos-accent-4)
+var(--litmos-accent-5)
+#970a82
+#4fb81c
+#008fd3
+#e35600
+#757575
+#f2f0f5
+#aaa
+#dfdfdf
+#1980ec
+#010101
+#0097cf
+rgba(0,0,0,.2)
+#dcdcdc
+#cc0000
+#ffd230
+#d8ac12
+#e3ba24
+#a7a7a7
+#b7b7b7
+#d7b472
+#aa8a4c
+#b7994b
+#f8f9f9
+#00d24c
+#069
+orange
+#d4dfe3
+#e0e0e0
+red
+#b5d0e8
+#428bca
+#bbbbbb
+#efab00
+#767676
+#727272
+#068845
+#0076ca
+#5bc6e8
+#e5e4e5
+#fa4747
+#131517
+var(--white-background)
+#1c1c1c
+#088746
+#099f52
+rgba(0, 0, 0, .1)
+#cacaca
+#0bb75f
+#043e20
+#077d41
+#00b942
+#003914
+#009f39
+#007b2c
+#6e6e8c
+#7c7c98
+#363645
+#63637e
+#53536a
+#ffa700
+#ffb019
+#7f5300
+#e59600
+#c17f00
+rgba(255, 255, 255, .1)
+#0ab05b
+rgba(0, 0, 0, .15)
+#adfad3
+rgba(0, 0, 0, .3)
+rgba(0, 0, 0, .2)
+rgba(0, 0, 0, .7)
+#447de8
+var(--text-body)
+rgba(250, 71, 71, 0.1)
+rgba(0, 210, 75, 0.1)
+#d1d5db
+#4f46e5
+var(--grey-grey-3)
+var(--grey-grey-15)
+var(--brand-secondary-background)
+var(--litmos-button-foreground)
+var(--accent-accent-1-solid)
+#f0f0f0
+#ffcccc
+rgba(0,0,0,.15)
+#ff3300
+#ff8635
+#009900
+#00c100
+#ffff99
+#99ccff
+#bc6580
+#336699
+#ff0000
+#c3cbd3
+#445e74
+#ffcc00
+rgba(255, 255, 255, .85)
+rgba(247, 247, 247, .85)
+#ce0000
+#c9dada
+rgba(255,255,255,0.55)
+#b3b3b3
+rgba(255,255,255,0.2)
+#111
+rgba(0,0,0,0.5)
+#0066ff
+#a20000
+#d2eaff
+#90bd63
+rgba(0,0,0,0.4)
+#83bc49
+#2db200
+#d14836
+#dd4b39
+#ededef
+#fefefe
+#00365a
+#04599a
+#dadada
+rgba(255,255,255,1)
+#70a33c
+#cfcfcf
+#9cc153
+#d95348
+#d9a300
+#606060
+#454547
+#3071a9
+#979797
+#cececf
+#4f5052
+#9bce49
+#c3d0b0
+#5b5c5e
+rgb(185, 185, 185)
+#99ce46
+rgb(148,215,148)
+rgb(131, 189, 131)
+rgba(255, 255, 255, 0.4)
+#6b6e73
+#a5cf49
+#fffff0
+#e2dede
+#909090
+#f3f3f3
+#4caf50
+#3b5998
+rgba(0,0,0,0.2)
+#00aced
+rgba(50, 151, 253, 0.75)
+rgba(0,0,0,0.3)
+#686868
+var(--fd-color-text-1)
+var(--fd-color-background-1)
+rgba(10, 110, 209, 0.07)
+rgba(10, 110, 209, 0.1)
+var(--fd-color-action-1)
+rgba(10, 110, 209, 0.4)
+var(--fd-color-action-hover)
+var(--fd-color-action-selected)
+var(--fd-color-action-focus)
+var(--fd-forms-border-color)
+var(--fd-color-status-5)
+var(--fd-color-status-1)
+#b00
+var(--fd-color-status-3)
+var(--fd-color-status-2)
+rgba(242,242,242,.5)
+var(--fd-color-neutral-4)
+var(--fd-color-neutral-3)
+var(--fd-color-text-2)
+var(--fd-color-neutral-2)
+var(--fd-color-text-3)
+rgba(74, 80, 92, 0.3)
+var(--fd-color-neutral-1)
+var(--fd-color-background-6)
+var(--fd-color-background-3)
+var(--fd-color-background-4)
+var(--fd-color-background-5)
+var(--fd-button-color)
+var(--fd-button-background-color)
+var(--fd-color-action-2)
+var(--fd-color-shell-2)
+rgba(10,110,209,.07)
+var(--fd-color-neutral-5)
+#ededee
+rgba(137,145,154,.4)
+#c5dcf2
+rgba(10,110,209,.6)
+var(--fd-color-action-visited)
+rgba(50,54,58,.08)
+rgba(0,0,0,.07)
+rgba(106,109,112,.4)
+var(--fd-calendar-item-color)
+var(--fd-color-shell-1)
+var(--fd-color-action-3)
+var(--fd-color-text-4)
+var(--fd-color-background-7)
+var(--fd-color-neutral-6)
+var(--fd-color-accent-1)
+var(--fd-color-accent-2)
+var(--fd-color-accent-3)
+var(--fd-color-accent-4)
+var(--fd-color-accent-5)
+var(--fd-color-accent-6)
+var(--fd-color-accent-7)
+var(--fd-color-accent-8)
+var(--fd-color-accent-9)
+var(--fd-color-accent-10)
+var(--fd-color-accent-11)
+var(--fd-color-accent-12)
+var(--fd-color-accent-13)
+var(--fd-color-accent-15)
+var(--fd-color-shell-3)
+var(--fd-color-shell-4)
+var(--fd-color-shell-5)
+#8fdf82
+#d7d7d7
+rgba(255, 255, 255, 0.75)
+rgba(255, 255, 255, 0.2)
+#3a87ad
+rgba(0, 0, 0, 0.3)
+#808080
+#7c7c7c
+#432
+#e3dad1
+#f3efec
+#6a8c00
+#99cc00
+#708090
+rgba(238, 238, 238, 0.3)
+#99cc66
+#292929
+#94c947
+#e7c3c3
+#353535
+#00a9e0
+#ececec
+#c5bebe
+#00a1e1
+#ffffcc
+#1797c0
+#6f6f6f
+#dc143c
+#5d5d5d
+#fd4
+#fe7
+#005d96
+var(--litmos-accent-9)
+rgba(255, 255, 255, 0.8)
+#455e74
+rgba(255, 255, 255, 0.85)
+#47a447
+#161616
+#ffc300
+#92d400
+#fc7022
+#382e1f
+#496132
+#bf4900
+#ffa500
+#fffaea
+blue
+#5a6986
+#64992c
+#d95fd1
+#795ea5
+#85a5e0
+#fe96a1
+#8c513b
+#f29422
+#a7d78d
+#3cb371
+#778899
+#cc0033
+#339900
+#fff2c1
+#ffdab9
+#7eadd9
+#669900
+#669999
+#d3d3d3
+#ddefff
+#f0f8ff
+#61942e
+#fc3
+#ffc
+#339933
+#006600
+#9cce49
+#227aff
+#e8f1fe
+#1a1a1a
+#8f8f8f
+#fbfbfb
+#b4b4b4
+#aca899
+#434343
+#aaaaaa
+#b5b8c8
+#c30
+#fee
+#ff7870
+#c0272b
+#575757
+#efefef
+#c8c8c8
+#b9b9b9
+#d7d9df
+#bcbcbc
+#d8d8d8
+#3764a0
+#8d8d8d
+#444444
+#afafaf
+#373737
+#898989
+#e9e9e9
+#393939
+#363636
+#ff4545
+#dbdbdb
+#84a0c4
+#e2e2e2
+#a6a6a6
+#396095
+#f0f2f5
+#f2f4f4
+var(--litmos-navbar-background-color)
+var(--litmos-navbar-text-color)
+#1b6ae2
+#dedede
+rgba(0, 0, 0, 0.40)
+rgba(0, 0, 0, .25)
+#4596ce
+#145072
+#85bae4
