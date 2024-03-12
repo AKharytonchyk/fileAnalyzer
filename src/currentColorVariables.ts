@@ -1,4 +1,4 @@
-export const cuurentColorVariables = {
+export const currentColorVariables = {
   '--grey-grey-15':'#000',
   '--litmos-button-foreground':'#000000',
   '--litmos-accent-1-dark':'#0057d2',

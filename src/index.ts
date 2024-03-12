@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import xml2json from "xml2json";
-import {cuurentColorVariables} from "./currentColorVariables";
+import { currentColorVariables } from "./currentColorVariables";
 
 export interface Config {
   scripts: Scripts;
@@ -16,9 +16,9 @@ export interface Bundles {
 }
 
 export interface Bundle {
-  name:  string;
+  name: string;
   debug: Debug;
-  prod:  Debug;
+  prod: Debug;
 }
 
 export interface Debug {
@@ -28,9 +28,10 @@ export interface Debug {
 export interface FileElement {
   src: string;
 }
-const cssVariables = Object.keys(cuurentColorVariables).join("|");
+const cssVariables = Object.keys(currentColorVariables).join("|");
 const cssVariableRegex = new RegExp(`var\\((${cssVariables})`, "gi");
-const regularColorsRegex = /:\s?(black|white|red|green|blue|yellow|orange|pink|purple|brown|gray|grey)/i;
+const regularColorsRegex =
+  /:\s?(black|white|red|green|blue|yellow|orange|pink|purple|brown|gray|grey)/i;
 
 const filePath = process.argv[2];
 const scriptConfig = process.argv[3];
@@ -43,10 +44,18 @@ const parsedJson: Config = JSON.parse(jsonContent);
 const fileList = parsedJson.scripts.bundles.bundle.flatMap((bundle) => {
   const debugFiles = bundle.debug.file;
   if (Array.isArray(debugFiles)) {
-    return debugFiles.map((file) => ({path: file.src.replace(/\//gi, '\\').replace('\\litmos\\', ''), bundleName: bundle.name}));
+    return debugFiles.map((file) => ({
+      path: file.src.replace(/\//gi, "\\").replace("\\litmos\\", ""),
+      bundleName: bundle.name,
+    }));
   }
-  return [{path: debugFiles.src.replace('/', '\\').replace('\\litmos\\', ''), bundleName: bundle.name}];
-})
+  return [
+    {
+      path: debugFiles.src.replace("/", "\\").replace("\\litmos\\", ""),
+      bundleName: bundle.name,
+    },
+  ];
+});
 
 fs.writeFileSync(outputJson, JSON.stringify(fileList, null, 2));
 
@@ -76,10 +85,18 @@ interface FileScan {
   foundLines: {
     lineNumber: number;
     lineContent: string;
+    color: string;
+    variable: string;
   }[];
 }
 
+const variableRecord: Record<string, string> = Object.entries(currentColorVariables).reduce((acc, [key, value]) => {
+  acc[value.toLowerCase()] = key.toLowerCase();
+  return acc;
+}, {} as Record<string, string>);
+
 const scanCSSFiles = (files: string[]) => {
+  const colorSet = new Set<string>();
   const output = files
     .filter((file) => !file.endsWith("min.css"))
     .filter((file) => !file.includes("\\bin\\"))
@@ -90,41 +107,63 @@ const scanCSSFiles = (files: string[]) => {
       const content = fs.readFileSync(file, "utf-8");
       const fileScanResult: FileScan = {
         filePath: file,
-        bundleName: fileList.find((f) => file.includes(f.path))?.bundleName || "",
+        bundleName:
+          fileList.find((f) => file.includes(f.path))?.bundleName || "",
         foundLines: [],
       };
+
+      if(fileScanResult.bundleName === "") return acc;
 
       const lines = content.split("\n");
 
       lines.forEach((line, index) => {
-        if (
-          line.match(/#[0-9a-fA-F]{6}[;,\s]/g)
-          || line.match(/#[0-9a-fA-F]{3}[;,\s]/g) 
-          || line.match(/rgba?\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}/g) 
-          || line.match(/hsla?\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}/g) 
-          || line.match(/rgb\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}/g) 
-          || line.match(/hsl\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}/g)
-          || line.match(cssVariableRegex)
-          || line.match(regularColorsRegex)
-          ) {
+        const hrefMatches = line.match(/#[0-9a-fA-F]{3}[;,\s]/gi)?.slice(0) || [];
+        const rgbaMatches = line.match(/rgba?\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}/gi)?.slice(0) || [];
+        const hslaMatches = line.match(/hsla?\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}/gi)?.slice(0) || [];
+        const regularColorsMatches = line.match(regularColorsRegex)?.slice(0) || [];
+        const variableMatches = line.match(cssVariableRegex)?.slice(0) || [];
+
+        const matches = [
+          ...hrefMatches,
+          ...rgbaMatches,
+          ...hslaMatches,
+          ...regularColorsMatches,
+          ...variableMatches,
+        ];
+
+        matches.map(match => match.toLowerCase()).forEach((match) => {
+          if(!variableRecord[match]) colorSet.add(match);
           fileScanResult.foundLines.push({
             lineNumber: index + 1,
             lineContent: line,
+            color: match,
+            variable: variableRecord[match] || "",
           });
-        }
+        });
       });
 
-      if(fileScanResult.foundLines.length < 1) return acc;
+      if (fileScanResult.foundLines.length < 1) return acc;
 
       return acc.concat(fileScanResult);
     }, [] as FileScan[]);
 
-  const entries = Object.entries(cuurentColorVariables)
+  const entries = Object.entries(currentColorVariables);
 
-  const csvOutput = output.flatMap((file) => file.foundLines.map((line) => `${file.filePath}| ${file.bundleName}| ${line.lineNumber}| ${line.lineContent.trim()}| ${entries.filter(([, value]) => line.lineContent.toLowerCase().includes(value.toLowerCase())).map(([key]) => key).join(",")}`));
-  csvOutput.unshift("File Path| Bundle Name| Line Number| Line Content| CSS Variable Name");
-
-
+  const csvOutput = output.flatMap((file) =>
+    file.foundLines.map(
+      (line) =>
+        `${file.filePath}| ${file.bundleName}| ${line.lineNumber}| ${line.lineContent.trim()}| ${entries
+          .filter(([, value]) =>
+            line.lineContent.toLowerCase().includes(value.toLowerCase())
+          )
+          .map(([key]) => key)
+          .join(",")}`
+    )
+  );
+  csvOutput.unshift(
+    "File Path| Bundle Name| Line Number| Line Content| CSS Variable Name"
+  );
+  fs.writeFileSync(path.join(__dirname, "missingColorVars.txt"), JSON.stringify([...colorSet].join("\n"), null, 2));
   fs.writeFileSync(path.join(__dirname, "output.csv"), csvOutput.join("\n"));
   // fs.writeFileSync(outputJson, JSON.stringify(output, null, 2));
 };
