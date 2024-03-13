@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import xml2json from "xml2json";
 import { currentColorVariables } from "./currentColorVariables";
+import { sortColors } from "./colorMagic";
 
 export interface Config {
   scripts: Scripts;
@@ -186,3 +187,8 @@ const scanCSSFiles = (files: string[]) => {
 
 const cssFiles = findCSSFiles(filePath);
 const colors = scanCSSFiles(cssFiles);
+
+
+const sortedColors = sortColors(colorCount);
+fs.writeFileSync(path.join(__dirname, "files/sorted_colors_with_count.css"), `:root { \n${sortedColors.map(({color, count}, i) => `--color-${i}-${count}: ${color}; /* ${count} */`).join("\n")}\n }`);
+
