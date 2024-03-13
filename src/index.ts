@@ -87,8 +87,11 @@ interface FileScan {
     lineContent: string;
     color: string;
     variable: string;
+    selector: string;
   }[];
 }
+
+const colorCount: Record<string, number> = {};
 
 const variableRecord: Record<string, string> = Object.entries(currentColorVariables).reduce((acc, [key, value]) => {
   acc[value.toLowerCase()] = key.toLowerCase();
@@ -100,6 +103,8 @@ const scanCSSFiles = (files: string[]) => {
   const output = files
     .filter((file) => !file.endsWith("min.css"))
     .filter((file) => !file.includes("\\bin\\"))
+    .filter((file) => !file.includes("jquery"))
+    .filter((file) => !file.includes("\\bootstrap.css"))
     .filter((file) => !file.includes("Test"))
     .filter((file) => !file.includes("\\ckeditor"))
     .filter((file) => !file.includes("\\jqueryui\\"))
@@ -116,7 +121,12 @@ const scanCSSFiles = (files: string[]) => {
 
       const lines = content.split("\n");
 
+      let selector = "";
+
       lines.forEach((line, index) => {
+        if (line.includes("{")) {
+          selector = line.split("{")[0] || line.match(/^(.*)\n^{/gi)?.[0] || "";
+        }
         const hrefMatches = line.match(/#[0-9a-fA-F]{3,6}[;,\s]/gi)?.map(el=> el.replace(/[;,\s]/, '')) || [];
         const rgbMatches = line.match(/rgba?\(\s?[0-9]{1,3},\s?[0-9]{1,3},\s?[0-9]{1,3}\)/gi) || [];
         const rgbaMatches = line.match(/rgba?\(\s?[0-9]{1,3},\s?[0-9]{1,3},\s?[0-9]{1,3},\s?[0-9,.]{1,9}\)/gi) || [];
@@ -132,12 +142,18 @@ const scanCSSFiles = (files: string[]) => {
         ];
 
         matches.map(match => match.toLowerCase().trim()).forEach((match) => {
+          if(colorCount[match]) colorCount[match]++;
+          else colorCount[match] = 1;
+        });
+
+        matches.map(match => match.toLowerCase().trim()).forEach((match) => {
           if(!variableRecord[match]) colorSet.add(match);
           fileScanResult.foundLines.push({
             lineNumber: index + 1,
             lineContent: line,
             color: match,
             variable: variableRecord[match] || "",
+            selector: selector,
           });
         });
       });
@@ -152,16 +168,16 @@ const scanCSSFiles = (files: string[]) => {
   const csvOutput = output.flatMap((file) =>
     file.foundLines.map(
       (line) =>
-        `${file.filePath}| ${file.bundleName}| ${line.lineNumber}| ${line.lineContent.trim()}| ${entries
+        `${file.filePath}| ${file.bundleName}| ${line.lineNumber}| ${line.lineContent.trim()}| ${line.selector}| ${entries
           .filter(([, value]) =>
             line.lineContent.toLowerCase().includes(value.toLowerCase())
           )
           .map(([key]) => key)
-          .join(",")} | ${line.color} | ${line.variable}`
+          .join(",")} | ${line.color} | ${colorCount[line.color]}| ${line.variable}`
     )
   );
   csvOutput.unshift(
-    "File Path| Bundle Name| Line Number| Line Content| CSS Variable Name| Color| Variable Name"
+    "File Path| Bundle Name| Line Number| Line Content| Selector Name| CSS Variable Name| Color| Color Count| Variable Name"
   );
   fs.writeFileSync(path.join(__dirname, "missingColorVars.txt"), JSON.stringify([...colorSet].join("\n"), null, 2));
   fs.writeFileSync(path.join(__dirname, "output.csv"), csvOutput.join("\n"));
