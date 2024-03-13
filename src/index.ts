@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import xml2json from "xml2json";
 import { currentColorVariables } from "./currentColorVariables";
-import { sortColors } from "./colorMagic";
+import { adjustColorsByUsage, sortColors } from "./colorMagic";
 
 export interface Config {
   scripts: Scripts;
@@ -190,5 +190,7 @@ const colors = scanCSSFiles(cssFiles);
 
 
 const sortedColors = sortColors(colorCount);
+const adjustedColors = adjustColorsByUsage(colorCount);
 fs.writeFileSync(path.join(__dirname, "files/sorted_colors_with_count.css"), `:root { \n${sortedColors.map(({color, count}, i) => `--color-${i}-${count}: ${color}; /* ${count} */`).join("\n")}\n }`);
+fs.writeFileSync(path.join(__dirname, "files/adjusted_colors.css"), `:root { \n${adjustedColors.map(({color, count, closestMajorColor}, i) => `--color-${i}-${count}: ${color}; /* ${closestMajorColor} */`).join("\n")}\n }`);
 
