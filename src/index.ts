@@ -2,10 +2,8 @@ import fs from "fs";
 import path from "path";
 import xml2json from "xml2json";
 import { currentColorVariables } from "./currentColorVariables";
-import { adjustColorsByUsage, sortColors } from "./colorMagic";
-import { sortAndSimplifyColors } from "./colors/simplification";
-import { analyzeColorGravitation } from "./colors/gravitation";
-
+import { sortColors } from "./colorMagic";
+import { calculateDifferencesForAllColors } from "./colors/pyCalculator";
 export interface Config {
   scripts: Scripts;
 }
@@ -192,11 +190,15 @@ const colors = scanCSSFiles(cssFiles);
 
 
 const sortedColors = sortColors(colorCount);
-const adjustedColors = adjustColorsByUsage(colorCount);
-const simplColors = sortAndSimplifyColors(colorCount, 10);
-const gravitation = analyzeColorGravitation(colorCount);
 
 fs.writeFileSync(path.join(__dirname, "files/sorted_colors_with_count.css"), `:root { \n${sortedColors.map(({color, count}, i) => `--color-${i}-${count}: ${color}; /* ${count} */`).join("\n")}\n }`);
-fs.writeFileSync(path.join(__dirname, "files/adjusted_colors.css"), `:root { \n${adjustedColors.map(({color, count, closestMajorColor}, i) => `--color-${i}-${count}: ${color}; /* ${closestMajorColor} */`).join("\n")}\n }`);
-fs.writeFileSync(path.join(__dirname, "files/simple_colors.css"), `:root { \n${simplColors.map(({color, count, mergedInto}, i) => `--color-${i}-${count}: ${color}; /* ${mergedInto} */`).join("\n")}\n }`);
-fs.writeFileSync(path.join(__dirname, "files/gravitation_colors.css"), `:root { \n${gravitation.map(({color, count, closestMajorColor}, i) => `--color-${i}-${count}: ${color}; /* ${closestMajorColor} */`).join("\n")}\n }`);
+
+
+const ceiColors = calculateDifferencesForAllColors(colorCount).then((res) => {
+  fs.writeFileSync(path.join(__dirname, "files/cei_colors.json"), JSON.stringify(res, null, 2));
+  fs.writeFileSync(path.join(__dirname, "files/cei_colors.css"), `:root { \n${res.map(({color, count, name, closestBasisColor, colorDifference}, i) => `--color-${name}-${i}: ${color}; /* Count: ${count}, Closest: ${closestBasisColor}, ${colorDifference} */`).join("\n")}\n }`);
+});
+
+ceiColors.then(() => {
+  console.log("Done");
+});
