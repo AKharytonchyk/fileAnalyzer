@@ -33,7 +33,7 @@ export const treeShakeColors = (colors: string[], colorPallet: string[], deltaTh
     const parsedColors = parseColors(colors);
     const parsedBaseColors = parseColors(colorPallet);
 
-    parsedColors.map((color) => {
+    return parsedColors.map((color) => {
       let minDifference = deltaThreshold;
       let closestBaseColor: ColorInfo | undefined;
 

@@ -166,9 +166,8 @@ const scanCSSFiles = (files: string[]) => {
   csvOutput.unshift(
     "File Path| Bundle Name| Line Number| Line Content| Selector Name| CSS Variable Name| Color| Color Count| Variable Name"
   );
-  fs.writeFileSync(path.join(__dirname, "missingColorVars.txt"), JSON.stringify([...colorSet].join("\n"), null, 2));
+  fs.writeFileSync(path.join(__dirname, "files/application_colors.json"), JSON.stringify({colorVariables: Array.from(colorSet)}, null, 2));
   fs.writeFileSync(path.join(__dirname, "output.csv"), csvOutput.join("\n"));
-  // fs.writeFileSync(outputJson, JSON.stringify(output, null, 2));
 };
 
 const cssFiles = findCSSFiles(filePath);

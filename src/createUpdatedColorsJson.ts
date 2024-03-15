@@ -1,8 +1,10 @@
 import fs from 'fs';
 import path from 'path';
-import { Colord, HslColor, extend } from "colord";
+import { Colord, extend } from "colord";
 import namesPlugin from "colord/plugins/names";
 import {currentColorVariables} from './currentColorVariables';
+import applicationColors from './files/application_colors.json'
+import { treeShakeColors } from './colors/colordColorComparison';
 extend([namesPlugin]);
 
 const litmosFigmaColorMapping = {
@@ -53,6 +55,17 @@ const variableMapping = Object.entries(currentColorVariables).reduce((acc, [vari
     return acc;
 }, {} as Record<string, {updatedColor: string, variableName: string}>);
 
+const missedApplicationColors = applicationColors.colorVariables.filter(color => !colorsMapping[color]?.updatedColor);
+const approximatedColors = treeShakeColors(missedApplicationColors, Object.keys(litmosFigmaColorMapping)).reduce((acc, color) => {
+  const colorIsAvailableInMapping = colorsMapping[color.variable]?.updatedColor;
+  if (colorIsAvailableInMapping) return acc;
+
+  const variableName = litmosFigmaColorMapping[color.hex] ?? ('--litmos-new-'+(new Colord('#'+color.hex).toName({ closest: true }) || 'unknown')+'-color') ;
+  acc[color.variable] = {updatedColor: color.hex, variableName: `${variableName}`};
+
+  return acc;
+}, {} as Record<string, {updatedColor: string, variableName: string}>);
+
 fs.writeFileSync(path.join(__dirname, "files/litmos_variables_updated.css"),
  `:root { \n${Object.keys(colorsMapping)
     .map((currentColor, i) => `  ${colorsMapping[currentColor].variableName}: #${colorsMapping[currentColor].updatedColor};\n  --previous-color-${i}: ${currentColor};`).join("\n")}\n }`);
@@ -65,6 +78,6 @@ console.log(`Total updated colors: ${Object.keys(colorsMapping).length}`);
 fs.writeFileSync(path.join(__dirname, "files/litmos_current_theme.css"),
 `:root{\n${Array.from(countUpdatedColors).map((color, i) => (litmosFigmaColorMapping[color] ?? ('--litmos-new-'+(new Colord('#'+color).toName({ closest: true }) || 'unknown')+'-color'))+': #'+color+';').sort().join("\n")}\n}`);
 
-fs.writeFileSync(path.join(__dirname, "files/litmos_variables_updated.json"), JSON.stringify({...colorsMapping, ...variableMapping}, null, 2));
+fs.writeFileSync(path.join(__dirname, "files/litmos_variables_updated.json"), JSON.stringify({...colorsMapping, ...variableMapping, ...approximatedColors}, null, 2));
 
 console.log(`Total updated colors: ${countUpdatedColors.size}`);
