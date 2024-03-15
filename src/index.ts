@@ -2,10 +2,9 @@ import fs from "fs";
 import path from "path";
 import { currentColorVariables } from "./currentColorVariables";
 import { sortColors } from "./colorMagic";
-import { calculateDifferencesForAllColors } from "./colors/pyCalculator";
 import { getFilesFromBundle } from "./crawler/getFilesFromBundle";
-import { getCssFilesFromJs } from "./crawler/jsfileParser";
 import { getCssFilesFromHtml } from "./crawler/htmlFileParser";
+import { getCssFilesFromJs } from "./crawler/jsfileParser";
 export interface Config {
   scripts: Scripts;
 }
