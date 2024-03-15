@@ -1,9 +1,11 @@
 import fs from "fs";
 import path from "path";
-import xml2json from "xml2json";
 import { currentColorVariables } from "./currentColorVariables";
 import { sortColors } from "./colorMagic";
 import { calculateDifferencesForAllColors } from "./colors/pyCalculator";
+import { getFilesFromBundle } from "./crawler/getFilesFromBundle";
+import { getCssFilesFromJs } from "./crawler/jsfileParser";
+import { getCssFilesFromHtml } from "./crawler/htmlFileParser";
 export interface Config {
   scripts: Scripts;
 }
@@ -33,30 +35,16 @@ const cssVariables = Object.keys(currentColorVariables).join("|");
 const cssVariableRegex = new RegExp(`var\\((${cssVariables})\\)`, "gi");
 const regularColorsRegex =
   /:\s?(black|white|red|green|blue|yellow|orange|pink|purple|brown|gray|grey)/i;
+const outputJson = path.join(__dirname, "output.json");
 
 const filePath = process.argv[2];
 const scriptConfig = process.argv[3];
-const outputJson = path.join(__dirname, "output.json");
 
-const xmlContent = fs.readFileSync(scriptConfig, "utf-8");
-const jsonContent = xml2json.toJson(xmlContent);
-const parsedJson: Config = JSON.parse(jsonContent);
+const fileList = getFilesFromBundle(scriptConfig);
+const filesFromJs = getCssFilesFromJs(filePath).map((file) => ({path: file.split('/').pop() ?? file, bundleName: "js-files"}));
+const filesFromCSharp = getCssFilesFromHtml(filePath).map((file) => ({path: file.split("/").pop() ?? file, bundleName: "csharp-files"}));
+fileList.push(...filesFromJs, ...filesFromCSharp)
 
-const fileList = parsedJson.scripts.bundles.bundle.flatMap((bundle) => {
-  const debugFiles = bundle.debug.file;
-  if (Array.isArray(debugFiles)) {
-    return debugFiles.map((file) => ({
-      path: file.src.replace(/\//gi, "\\").replace("\\litmos\\", ""),
-      bundleName: bundle.name,
-    }));
-  }
-  return [
-    {
-      path: debugFiles.src.replace("/", "\\").replace("\\litmos\\", ""),
-      bundleName: bundle.name,
-    },
-  ];
-});
 
 fs.writeFileSync(outputJson, JSON.stringify(fileList, null, 2));
 
@@ -65,7 +53,7 @@ if (!filePath) {
   process.exit(1);
 }
 
-const findCSSFiles = (filePath: string): string[] => {
+export const findCSSFiles = (filePath: string): string[] => {
   const files = fs.readdirSync(filePath);
   let result: string[] = [];
   files.forEach((file) => {
@@ -107,7 +95,6 @@ const scanCSSFiles = (files: string[]) => {
     .filter((file) => !file.includes("jquery"))
     .filter((file) => !file.includes("\\bootstrap.css"))
     .filter((file) => !file.includes("Test"))
-    .filter((file) => !file.includes("\\ckeditor"))
     .filter((file) => !file.includes("\\jqueryui\\"))
     .reduce((acc: FileScan[], file) => {
       const content = fs.readFileSync(file, "utf-8");
@@ -192,13 +179,3 @@ const colors = scanCSSFiles(cssFiles);
 const sortedColors = sortColors(colorCount);
 
 fs.writeFileSync(path.join(__dirname, "files/sorted_colors_with_count.css"), `:root { \n${sortedColors.map(({color, count}, i) => `--color-${i}-${count}: ${color}; /* ${count} */`).join("\n")}\n }`);
-
-
-const ceiColors = calculateDifferencesForAllColors(colorCount).then((res) => {
-  fs.writeFileSync(path.join(__dirname, "files/cei_colors.json"), JSON.stringify(res, null, 2));
-  fs.writeFileSync(path.join(__dirname, "files/cei_colors.css"), `:root { \n${res.map(({color, count, name, closestBasisColor, colorDifference}, i) => `--color-${name}-${i}: ${color}; /* Count: ${count}, Closest: ${closestBasisColor}, ${colorDifference} */`).join("\n")}\n }`);
-});
-
-ceiColors.then(() => {
-  console.log("Done");
-});

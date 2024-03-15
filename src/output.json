@@ -44,23 +44,23 @@
     "bundleName": "login"
   },
   {
-    "path": "\\litmos/static/css/ios-app.css",
+    "path": "static\\css\\ios-app.css",
     "bundleName": "ios-app"
   },
   {
-    "path": "\\litmos/static/js/jquery.touchSwipe.min.js",
+    "path": "static\\js\\jquery.touchSwipe.min.js",
     "bundleName": "touch_swipe"
   },
   {
-    "path": "\\litmos/static/js/Chart.js",
+    "path": "static\\js\\Chart.js",
     "bundleName": "charts_js"
   },
   {
-    "path": "\\litmos/static/js/spectrum.js",
+    "path": "static\\js\\spectrum.js",
     "bundleName": "spectrum_js"
   },
   {
-    "path": "\\litmos/static/css/spectrum.css",
+    "path": "static\\css\\spectrum.css",
     "bundleName": "spectrum_css"
   },
   {
@@ -164,11 +164,11 @@
     "bundleName": "bootstrap3.4.1CX"
   },
   {
-    "path": "\\litmos/static/css/jquery.orgchart.min.css",
+    "path": "static\\css\\jquery.orgchart.min.css",
     "bundleName": "orgChartCSS"
   },
   {
-    "path": "\\litmos/static/css/bootstrap3.4.1/litmosSFDC.css",
+    "path": "static\\css\\bootstrap3.4.1\\litmosSFDC.css",
     "bundleName": "litmos-sfdc"
   },
   {
@@ -180,7 +180,7 @@
     "bundleName": "gridstack_js"
   },
   {
-    "path": "\\litmos/static/css/gridstack10.1.0/gridstack.min.css",
+    "path": "static\\css\\gridstack10.1.0\\gridstack.min.css",
     "bundleName": "gridstack_css"
   },
   {
@@ -196,7 +196,7 @@
     "bundleName": "gridstack_jquery"
   },
   {
-    "path": "\\litmos/static/js/slick/slick.min.js",
+    "path": "static\\js\\slick\\slick.min.js",
     "bundleName": "slick_js"
   },
   {
@@ -212,11 +212,11 @@
     "bundleName": "slick_css"
   },
   {
-    "path": "\\litmos/static/bootstrap-tour/bootstrap-tour.min.css",
+    "path": "static\\bootstrap-tour\\bootstrap-tour.min.css",
     "bundleName": "bootstrap-tour-css"
   },
   {
-    "path": "\\litmos/static/js/progressbar.js",
+    "path": "static\\js\\progressbar.js",
     "bundleName": "progressbar"
   },
   {
@@ -228,19 +228,19 @@
     "bundleName": "bootstrapjs3.4.1"
   },
   {
-    "path": "\\litmos/static/js/bootstrap-treeview.min.js",
+    "path": "static\\js\\bootstrap-treeview.min.js",
     "bundleName": "bootstraptreeviewjs"
   },
   {
-    "path": "\\litmos/static/js/bootstrap-select.min.js",
+    "path": "static\\js\\bootstrap-select.min.js",
     "bundleName": "bootstrapselectjs"
   },
   {
-    "path": "\\litmos/static/video/jwplayer.js",
+    "path": "static\\video\\jwplayer.js",
     "bundleName": "video-player"
   },
   {
-    "path": "\\litmos/static/jwplayer-8.26.7/jwplayer.js",
+    "path": "static\\jwplayer-8.26.7\\jwplayer.js",
     "bundleName": "new-video-player"
   },
   {
@@ -260,11 +260,11 @@
     "bundleName": "trainee-module-fullscreen-sfdc"
   },
   {
-    "path": "\\litmos/static/css/navbar.css",
+    "path": "static\\css\\navbar.css",
     "bundleName": "treeview_library_navbar_css"
   },
   {
-    "path": "\\litmos/static/js/navbar.js",
+    "path": "static\\js\\navbar.js",
     "bundleName": "treeview_library_navbar"
   },
   {
@@ -280,7 +280,7 @@
     "bundleName": "scorm_v2"
   },
   {
-    "path": "\\litmos/static/js/scorm/scorm-wrapper-loader.js",
+    "path": "static\\js\\scorm\\scorm-wrapper-loader.js",
     "bundleName": "scorm-wrapper-loader"
   },
   {
@@ -312,15 +312,15 @@
     "bundleName": "scorm-ext"
   },
   {
-    "path": "[cdn1]css\\v3.css",
+    "path": "css\\v3.css",
     "bundleName": "admin"
   },
   {
-    "path": "[cdn1]css\\common.css",
+    "path": "css\\common.css",
     "bundleName": "admin"
   },
   {
-    "path": "[cdn1]css\\lms_admin.css",
+    "path": "css\\lms_admin.css",
     "bundleName": "admin"
   },
   {
@@ -328,7 +328,7 @@
     "bundleName": "admin"
   },
   {
-    "path": "[cdn1]css\\lms_admin.css",
+    "path": "css\\lms_admin.css",
     "bundleName": "lms_admin"
   },
   {
@@ -336,7 +336,7 @@
     "bundleName": "lms_admin"
   },
   {
-    "path": "[cdn1]css\\lms_admin_SfdcTile.css",
+    "path": "css\\lms_admin_SfdcTile.css",
     "bundleName": "lms_admin_SfdcTile"
   },
   {
@@ -352,23 +352,23 @@
     "bundleName": "admin-sfdc"
   },
   {
-    "path": "\\litmos/static/js/dashboard/admindashboard.js",
+    "path": "static\\js\\dashboard\\admindashboard.js",
     "bundleName": "admindashboard"
   },
   {
-    "path": "\\litmos/static/js/dashboard/teamadmindashboard.js",
+    "path": "static\\js\\dashboard\\teamadmindashboard.js",
     "bundleName": "teamadmindashboard"
   },
   {
-    "path": "\\litmos/static/js/dashboard/learnerdashboard.js",
+    "path": "static\\js\\dashboard\\learnerdashboard.js",
     "bundleName": "learnerdashboard"
   },
   {
-    "path": "\\litmos/static/js/dashboard/dashboard.js",
+    "path": "static\\js\\dashboard\\dashboard.js",
     "bundleName": "dashboard"
   },
   {
-    "path": "\\litmos/static/js/dashboard/master.js",
+    "path": "static\\js\\dashboard\\master.js",
     "bundleName": "masteraccount"
   },
   {
@@ -380,47 +380,47 @@
     "bundleName": "courses"
   },
   {
-    "path": "\\litmos/static/js/courses/coursebuilder.js",
+    "path": "static\\js\\courses\\coursebuilder.js",
     "bundleName": "coursebuilder"
   },
   {
-    "path": "\\litmos/static/js/courses/coursesratingreviews.js",
+    "path": "static\\js\\courses\\coursesratingreviews.js",
     "bundleName": "coursesratingreviews"
   },
   {
-    "path": "\\litmos/static/js/courses/jquery.nanoscroller.min.js",
+    "path": "static\\js\\courses\\jquery.nanoscroller.min.js",
     "bundleName": "nanoscroll"
   },
   {
-    "path": "\\litmos/static/js/courses/googledrive.js",
+    "path": "static\\js\\courses\\googledrive.js",
     "bundleName": "googledrive"
   },
   {
-    "path": "\\litmos/static/js/courses/coursebuilderupload.js",
+    "path": "static\\js\\courses\\coursebuilderupload.js",
     "bundleName": "coursebuilderupload"
   },
   {
-    "path": "\\litmos/static/js/courses/contentrestoreupload.js",
+    "path": "static\\js\\courses\\contentrestoreupload.js",
     "bundleName": "contentrestoreupload"
   },
   {
-    "path": "\\litmos/static/js/courses/jquery.lionbars.0.3.js",
+    "path": "static\\js\\courses\\jquery.lionbars.0.3.js",
     "bundleName": "scroll"
   },
   {
-    "path": "\\litmos/static/js/util/scriptloader.js",
+    "path": "static\\js\\util\\scriptloader.js",
     "bundleName": "scriptloader"
   },
   {
-    "path": "\\litmos/static/js/courses/courseshtml.js",
+    "path": "static\\js\\courses\\courseshtml.js",
     "bundleName": "courseshtml"
   },
   {
-    "path": "\\litmos/static/js/team/teams.js",
+    "path": "static\\js\\team\\teams.js",
     "bundleName": "teams"
   },
   {
-    "path": "\\litmos/static/js/reports/reports.js",
+    "path": "static\\js\\reports\\reports.js",
     "bundleName": "reports"
   },
   {
@@ -456,11 +456,11 @@
     "bundleName": "upload"
   },
   {
-    "path": "\\litmos/static/js/upload/uploadhtml.js",
+    "path": "static\\js\\upload\\uploadhtml.js",
     "bundleName": "uploadhtml"
   },
   {
-    "path": "\\litmos/static/js/plupload/plupload.full.min-2.3.9.js",
+    "path": "static\\js\\plupload\\plupload.full.min-2.3.9.js",
     "bundleName": "plupload"
   },
   {
@@ -476,11 +476,11 @@
     "bundleName": "pluploadv2.3.9"
   },
   {
-    "path": "\\litmos/static/js/upload/uploadhtmlmultibutton.js",
+    "path": "static\\js\\upload\\uploadhtmlmultibutton.js",
     "bundleName": "uploadhtmlmultibutton"
   },
   {
-    "path": "\\litmos/static/js/upload/uploadhtml_dynamic.js",
+    "path": "static\\js\\upload\\uploadhtml_dynamic.js",
     "bundleName": "uploadhtmldynamic"
   },
   {
@@ -500,59 +500,59 @@
     "bundleName": "ecommerce"
   },
   {
-    "path": "[cdn1]js\\highcharts.js",
+    "path": "js\\highcharts.js",
     "bundleName": "charts"
   },
   {
-    "path": "[cdn1]js\\highcharts-more.js",
+    "path": "js\\highcharts-more.js",
     "bundleName": "charts"
   },
   {
-    "path": "[cdn1]js\\solid-gauge.js",
+    "path": "js\\solid-gauge.js",
     "bundleName": "charts"
   },
   {
-    "path": "[cdn1]js\\jquery-3.6.4.min.js",
+    "path": "js\\jquery-3.6.4.min.js",
     "bundleName": "jquery"
   },
   {
-    "path": "[cdn1]js\\jquery.counter.min.js",
+    "path": "js\\jquery.counter.min.js",
     "bundleName": "jquery"
   },
   {
-    "path": "[cdn1]js\\jquery.scrollTo-min.js",
+    "path": "js\\jquery.scrollTo-min.js",
     "bundleName": "jquery"
   },
   {
-    "path": "[cdn1]js\\jquery.raty.min.js",
+    "path": "js\\jquery.raty.min.js",
     "bundleName": "jquery"
   },
   {
-    "path": "[cdn1]js\\jquery-3.6.4.min.js",
+    "path": "js\\jquery-3.6.4.min.js",
     "bundleName": "jquery-bootstrap"
   },
   {
-    "path": "[cdn1]js\\jquery.counter.min.js",
+    "path": "js\\jquery.counter.min.js",
     "bundleName": "jquery-bootstrap"
   },
   {
-    "path": "[cdn1]js\\jquery.scrollTo-min.js",
+    "path": "js\\jquery.scrollTo-min.js",
     "bundleName": "jquery-bootstrap"
   },
   {
-    "path": "[cdn1]js\\jquery.raty.min.js",
+    "path": "js\\jquery.raty.min.js",
     "bundleName": "jquery-bootstrap"
   },
   {
-    "path": "[cdn1]js\\jquery-3.3.1.min.map",
+    "path": "js\\jquery-3.3.1.min.map",
     "bundleName": "jquery-bootstrap"
   },
   {
-    "path": "[cdn1]js\\jqueryvalidation\\jquery.validate.min.js",
+    "path": "js\\jqueryvalidation\\jquery.validate.min.js",
     "bundleName": "jquery-validation"
   },
   {
-    "path": "[cdn1]js\\jqueryvalidation\\jquery.validate.unobtrusive.min.js",
+    "path": "js\\jqueryvalidation\\jquery.validate.unobtrusive.min.js",
     "bundleName": "jquery-validation"
   },
   {
@@ -828,7 +828,7 @@
     "bundleName": "mobile"
   },
   {
-    "path": "\\litmos/static/mobile/lab.min.js",
+    "path": "static\\mobile\\lab.min.js",
     "bundleName": "labjs"
   },
   {
@@ -852,23 +852,23 @@
     "bundleName": "event"
   },
   {
-    "path": "\\litmos/static/css/minievent.css",
+    "path": "static\\css\\minievent.css",
     "bundleName": "mini_event"
   },
   {
-    "path": "\\litmos/static/css/planit.css",
+    "path": "static\\css\\planit.css",
     "bundleName": "planit"
   },
   {
-    "path": "\\litmos/static/css/planitlearner.css",
+    "path": "static\\css\\planitlearner.css",
     "bundleName": "planitlearner"
   },
   {
-    "path": "[cdn1]js\\reports\\quickreports.js",
+    "path": "js\\reports\\quickreports.js",
     "bundleName": "quickreports"
   },
   {
-    "path": "[cdn1]js\\reports\\tinyscroll.js",
+    "path": "js\\reports\\tinyscroll.js",
     "bundleName": "quickreports"
   },
   {
@@ -920,7 +920,7 @@
     "bundleName": "jOrgChart"
   },
   {
-    "path": "\\litmos/static/js/jOrgChart/css/jquery.jOrgChart.css",
+    "path": "static\\js\\jOrgChart\\css\\jquery.jOrgChart.css",
     "bundleName": "jOrgChartcss"
   },
   {
@@ -932,23 +932,23 @@
     "bundleName": "survey"
   },
   {
-    "path": "\\litmos/static/js/courses/learningpath.js",
+    "path": "static\\js\\courses\\learningpath.js",
     "bundleName": "learningpath"
   },
   {
-    "path": "\\litmos/static/js/collections/collections.js",
+    "path": "static\\js\\collections\\collections.js",
     "bundleName": "collections"
   },
   {
-    "path": "\\litmos/static/js/collections/userimport.js",
+    "path": "static\\js\\collections\\userimport.js",
     "bundleName": "listingUserImport"
   },
   {
-    "path": "\\litmos/static/js/collections/teamimport.js",
+    "path": "static\\js\\collections\\teamimport.js",
     "bundleName": "listingTeamImport"
   },
   {
-    "path": "\\litmos/static/js/discussions/discussions.js",
+    "path": "static\\js\\discussions\\discussions.js",
     "bundleName": "discussions"
   },
   {
@@ -960,15 +960,15 @@
     "bundleName": "gamification"
   },
   {
-    "path": "\\litmos/static/js/gamification/GamificationItem.js",
+    "path": "static\\js\\gamification\\GamificationItem.js",
     "bundleName": "gamificationItem"
   },
   {
-    "path": "\\litmos/static/js/autoassignrules/RuleItem.js",
+    "path": "static\\js\\autoassignrules\\RuleItem.js",
     "bundleName": "autoassignrules"
   },
   {
-    "path": "\\litmos/static/js/assignModal.js",
+    "path": "static\\js\\assignModal.js",
     "bundleName": "assign"
   },
   {
@@ -980,11 +980,11 @@
     "bundleName": "signup2"
   },
   {
-    "path": "\\litmos/static/css/pricingplan.css",
+    "path": "static\\css\\pricingplan.css",
     "bundleName": "pricingplan"
   },
   {
-    "path": "\\litmos/static/js/event/googlemap.js",
+    "path": "static\\js\\event\\googlemap.js",
     "bundleName": "googlemap"
   },
   {
@@ -1076,7 +1076,7 @@
     "bundleName": "coursePeopleSearch"
   },
   {
-    "path": "\\litmos/static/js/assignments/poller.js",
+    "path": "static\\js\\assignments\\poller.js",
     "bundleName": "assignmentsPoller"
   },
   {
@@ -1096,11 +1096,11 @@
     "bundleName": "insights"
   },
   {
-    "path": "\\litmos/static/js/insights/insight.report.js",
+    "path": "static\\js\\insights\\insight.report.js",
     "bundleName": "insightreport"
   },
   {
-    "path": "\\litmos/static/js/insights/insight.report.download.js",
+    "path": "static\\js\\insights\\insight.report.download.js",
     "bundleName": "insightreportdownload"
   },
   {
@@ -1112,15 +1112,15 @@
     "bundleName": "basictable"
   },
   {
-    "path": "\\litmos/static/js/boost/boost.js",
+    "path": "static\\js\\boost\\boost.js",
     "bundleName": "boost"
   },
   {
-    "path": "\\litmos/static/css/cameratag.css",
+    "path": "static\\css\\cameratag.css",
     "bundleName": "cameraTag"
   },
   {
-    "path": "\\litmos/static/css/valiant360.css",
+    "path": "static\\css\\valiant360.css",
     "bundleName": "valiant360"
   },
   {
@@ -1200,19 +1200,19 @@
     "bundleName": "marzipanovideo"
   },
   {
-    "path": "\\litmos/static/css/marzipano.css",
+    "path": "static\\css\\marzipano.css",
     "bundleName": "marzipanoCSS"
   },
   {
-    "path": "\\litmos/static/css/marzipanovideo.css",
+    "path": "static\\css\\marzipanovideo.css",
     "bundleName": "marzipanovideoCSS"
   },
   {
-    "path": "\\litmos/static/js/customfields/customfields.js",
+    "path": "static\\js\\customfields\\customfields.js",
     "bundleName": "customfields"
   },
   {
-    "path": "\\litmos/static/js/customfields/usercustomfields.js",
+    "path": "static\\js\\customfields\\usercustomfields.js",
     "bundleName": "usercustomfields"
   },
   {
@@ -1228,23 +1228,23 @@
     "bundleName": "emailtemplatejs"
   },
   {
-    "path": "\\litmos/static/css/ziggeo.css",
+    "path": "static\\css\\ziggeo.css",
     "bundleName": "ziggeoCSS"
   },
   {
-    "path": "\\litmos/static/js/ziggeo/ziggeo.js",
+    "path": "static\\js\\ziggeo\\ziggeo.js",
     "bundleName": "ziggeo"
   },
   {
-    "path": "\\litmos/static/js/ziggeo/ziggeo-app.js",
+    "path": "static\\js\\ziggeo\\ziggeo-app.js",
     "bundleName": "ziggeoApp"
   },
   {
-    "path": "\\litmos/static/js/ziggeo/ziggeomobile.js",
+    "path": "static\\js\\ziggeo\\ziggeomobile.js",
     "bundleName": "ziggeomobile"
   },
   {
-    "path": "\\litmos/static/js/people/people.js",
+    "path": "static\\js\\people\\people.js",
     "bundleName": "peopleimport"
   },
   {
@@ -1268,15 +1268,15 @@
     "bundleName": "instructor"
   },
   {
-    "path": "\\litmos/static/js/courses/courseimport.js",
+    "path": "static\\js\\courses\\courseimport.js",
     "bundleName": "courseimport"
   },
   {
-    "path": "\\litmos/static/js/courses/coursecompleteimport.js",
+    "path": "static\\js\\courses\\coursecompleteimport.js",
     "bundleName": "coursecompleteimport"
   },
   {
-    "path": "\\litmos/static/js/features/customDomain.js",
+    "path": "static\\js\\features\\customDomain.js",
     "bundleName": "customDomain"
   },
   {
@@ -1296,11 +1296,11 @@
     "bundleName": "externallearning"
   },
   {
-    "path": "\\litmos/static/js/jstree/jstree.min.js",
+    "path": "static\\js\\jstree\\jstree.min.js",
     "bundleName": "jstreeJS"
   },
   {
-    "path": "\\litmos/static/js/jstree/themes/default/style.css",
+    "path": "static\\js\\jstree\\themes\\default\\style.css",
     "bundleName": "jstreeCSS"
   },
   {
@@ -1316,31 +1316,31 @@
     "bundleName": "competency"
   },
   {
-    "path": "\\litmos/static/js/mapping.js",
+    "path": "static\\js\\mapping.js",
     "bundleName": "mapping"
   },
   {
-    "path": "\\litmos/static/js/ModuleLibrary.js",
+    "path": "static\\js\\ModuleLibrary.js",
     "bundleName": "ModuleLibrary"
   },
   {
-    "path": "\\litmos/static/js/multiselect.min.js",
+    "path": "static\\js\\multiselect.min.js",
     "bundleName": "MultiSelect"
   },
   {
-    "path": "\\litmos/static/js/collections/collectionsImport.js",
+    "path": "static\\js\\collections\\collectionsImport.js",
     "bundleName": "collectionsImport"
   },
   {
-    "path": "\\litmos/static/js/event/moment.min.js",
+    "path": "static\\js\\event\\moment.min.js",
     "bundleName": "momentjs"
   },
   {
-    "path": "\\litmos/static/js/asset/asset.js",
+    "path": "static\\js\\asset\\asset.js",
     "bundleName": "asset"
   },
   {
-    "path": "\\litmos/static/js/asset/assetMetrics.js",
+    "path": "static\\js\\asset\\assetMetrics.js",
     "bundleName": "assetMetrics"
   },
   {
@@ -1352,7 +1352,7 @@
     "bundleName": "closedcaptioning"
   },
   {
-    "path": "\\litmos/static/js/features/lrs.js",
+    "path": "static\\js\\features\\lrs.js",
     "bundleName": "lrs"
   },
   {
@@ -1372,7 +1372,7 @@
     "bundleName": "learningPathPeopleSearchFilter"
   },
   {
-    "path": "\\litmos/static/js/jquery.twbsPagination.js",
+    "path": "static\\js\\jquery.twbsPagination.js",
     "bundleName": "pagination"
   },
   {
@@ -1428,7 +1428,7 @@
     "bundleName": "dashboard-v2-editor"
   },
   {
-    "path": "\\litmos/static/js/dashboard-v2-driver/dist/main.js",
+    "path": "static\\js\\dashboard-v2-driver\\dist\\main.js",
     "bundleName": "dashboard-v2-driver"
   },
   {
@@ -1448,15 +1448,207 @@
     "bundleName": "meganav"
   },
   {
-    "path": "\\litmos/static/js/accessibility/datepicker-aria.js",
+    "path": "static\\ui\\achievements\\dist\\main.js",
+    "bundleName": "gamification-v2"
+  },
+  {
+    "path": "static\\js\\accessibility\\datepicker-aria.js",
     "bundleName": "datepickerAria"
   },
   {
-    "path": "\\litmos/static/css/rolepermissions.css",
+    "path": "static\\css\\rolepermissions.css",
     "bundleName": "rolepermissions"
   },
   {
-    "path": "\\litmos/static/css/home-library-accessibility-fix.css",
+    "path": "static\\css\\home-library-accessibility-fix.css",
     "bundleName": "globalSearchLearnerFilter"
+  },
+  {
+    "path": "dialog.css",
+    "bundleName": "js-files"
+  },
+  {
+    "path": "dialog.css",
+    "bundleName": "js-files"
+  },
+  {
+    "path": "tableselection.css",
+    "bundleName": "js-files"
+  },
+  {
+    "path": "colordialog.css",
+    "bundleName": "js-files"
+  },
+  {
+    "path": "templates.css",
+    "bundleName": "js-files"
+  },
+  {
+    "path": "wordcount.css",
+    "bundleName": "js-files"
+  },
+  {
+    "path": "email.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "email.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "samples.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "neo.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "sample.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "codemirror.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "show-hint.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "neo.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "fontello.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "samples.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "email.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "email.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "bootstrap.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "app.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "bootstrap.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "app.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "bootstrap.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "app.css",
+    "bundleName": "csharp-files"
+  },
+  {
+    "path": "bootstrap.css",
+    "bundleName": "csharp-files"
   }
 ]

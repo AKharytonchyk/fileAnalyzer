@@ -103,4 +103,12 @@ export const currentColorVariables = {
   '--text-body': '#1f252d',
   '--white-background': '#FFFFFF',
   '--grey-grey-15': '#000',
+  '--litmos-accent-1-transparent': 'rgba(27, 145, 255, 0.1)',
+  '--litmos-accent-2-transparent': 'rgba(155, 118, 255, 0.1)',
+  '--litmos-accent-3-transparent': 'rgba(245, 139, 0, 0.1)',
+  '--litmos-accent-4-transparent': 'rgba(92, 193, 34, 0.1)',
+  '--litmos-accent-5-transparent': 'rgba(238, 57, 57, 0.1)',
+  '--litmos-accent-6-transparent': 'rgba(4, 172, 167, 0.1)',
+  '--litmos-accent-7-transparent': 'rgba(243, 29, 236, 0.1)',
+  '--litmos-accent-9-transparent': 'rgba(131, 150, 168, 0.1)',
 }

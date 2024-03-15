@@ -1,0 +1,82 @@
+:root {
+    /* colors from litmos.css */
+    --litmos-primary-color: #f0ab00;
+    --litmos-primary-color-foreground:#000000;
+    --litmos-primary-color-dark: #a87700;
+    --litmos-primary-color-light: rgba(240, 171, 0, 0.1);
+
+    --litmos-navbar-background-color: #121212;
+    --litmos-navbar-text-color: #ffffff;
+
+    --litmos-toolbar-background-color: #262626;
+    --litmos-toolbar-text-color: #ffffff;
+
+    --white-background:#FFFFFF;
+
+    --litmos-link-color: #f0ab00;
+    --litmos-link-color-darker: #a87700;
+
+    --litmos-button-color: #f0ab00;
+    --litmos-button-foreground: #000000;
+
+    --litmos-accent-1: #1b90ff;
+    --litmos-accent-1-dark: #0057d2;
+    --litmos-accent-1-light: #ebf8ff;
+    --litmos-accent-1-transparent: rgba(27, 145, 255, 0.1);
+
+    --litmos-accent-2: #9b76ff;
+    --litmos-accent-2-dark: #5d36ff;
+    --litmos-accent-2-light: #f1ecff;
+    --litmos-accent-2-transparent: rgba(155, 118, 255, 0.1);
+
+    --litmos-accent-3: #f58b00;
+    --litmos-accent-3-dark: #a93e00;
+    --litmos-accent-3-light: #fff8d6;
+    --litmos-accent-3-transparent: rgba(245, 139, 0, 0.1);
+
+    --litmos-accent-4: #5dc122;
+    --litmos-accent-4-dark: #256f3a;
+    --litmos-accent-4-light: #f5fae5;
+    --litmos-accent-4-transparent: rgba(92, 193, 34, 0.1);
+
+    --litmos-accent-5: #ee3939;
+    --litmos-accent-5-dark: #aa0808;
+    --litmos-accent-5-light: #ffeaf4;
+    --litmos-accent-5-transparent: rgba(238, 57, 57, 0.1);
+
+    --litmos-accent-6: #04aca7;
+    --litmos-accent-6-dark: #046c7a;
+    --litmos-accent-6-light: #dafdf5;
+    --litmos-accent-6-transparent: rgba(4, 172, 167, 0.1);
+
+    --litmos-accent-7: #f31ded;
+    --litmos-accent-7-dark: #a100c2;
+    --litmos-accent-7-light: #fff0fa;
+    --litmos-accent-7-transparent: rgba(243, 29, 236, 0.1);
+
+    --litmos-accent-9: #8396a8;
+    --litmos-accent-9-dark: #475e75;
+    --litmos-accent-9-light: #f3f4f6;
+    --litmos-accent-9-transparent: rgba(131, 150, 168, 0.1);
+
+    /* colors from figma + from new convertion */
+    --litmos-layout-dark-page-bg-color: #1B1B1B;
+    --litmos-layout-dark-panel-bg-color: #2C2C2C;
+    --litmos-layout-edge-color: #C1C7CE;
+    --litmos-layout-light-devider-line-color: #EEEEEE;
+    --litmos-layout-tile-outline-color: #CDCDCD;
+    --litmos-new-black-color: #CDCDC;
+    --litmos-new-dimgray-color: #57687A;
+    --litmos-new-gainsboro-color: #D1E7DD;
+    --litmos-new-gold-color: #FFCC00;
+    --litmos-new-navajowhite-color: #FFE4A1;
+    --litmos-new-plum-color: #CCA0FC;
+    --litmos-soft-blue-color: #A8B1E8;
+    --litmos-soft-lavender-color: #ACA8CD;
+    --litmos-typography-boby-color: #32363A;
+    --litmos-typography-error-text-bg-color: #F8D7DA;
+    --litmos-typography-header-color: #4D4D4D;
+    --litmos-typography-success-text-color: #4D6A65;
+    --litmos-typography-white-text-color: #FBFBFB;
+    --litmos-ui-highlight-color: #EAF4FF;
+}

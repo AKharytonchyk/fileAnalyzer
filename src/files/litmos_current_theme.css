@@ -1,0 +1,20 @@
+:root{
+--litmos-layout-dark-page-bg-color: #1B1B1B;
+--litmos-layout-dark-panel-bg-color: #2C2C2C;
+--litmos-layout-edge-color: #C1C7CE;
+--litmos-layout-light-devider-line-color: #EEEEEE;
+--litmos-layout-tile-outline-color: #CDCDCD;
+--litmos-new-dimgray-color: #57687A;
+--litmos-new-gainsboro-color: #D1E7DD;
+--litmos-new-gold-color: #FFCC00;
+--litmos-new-navajowhite-color: #FFE4A1;
+--litmos-new-plum-color: #CCA0FC;
+--litmos-soft-blue-color: #A8B1E8;
+--litmos-soft-lavender-color: #ACA8CD;
+--litmos-typography-body-color: #32363A;
+--litmos-typography-error-text-bg-color: #F8D7DA;
+--litmos-typography-header-color: #4D4D4D;
+--litmos-typography-success-text-color: #4D6A65;
+--litmos-typography-white-text-color: #FBFBFB;
+--litmos-ui-highlight-color: #EAF4FF;
+}
